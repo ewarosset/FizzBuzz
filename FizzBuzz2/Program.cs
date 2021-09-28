@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FizzBuzz2
 {
@@ -7,52 +8,71 @@ namespace FizzBuzz2
         static void Main(string[] args)
         {
 
-            for (int i = 1; i < 201; i++)
+            for (int i = 1; i < 256; i++)
             {
                 String str = "";
-                
+                List<string> names = new List<string>();
+
                 if (i % 3 == 0)
                 {
-                    str += "Fizz";
+                    str = "Fizz";
+                    names.Add(str);
                 }
                 
                 if (i % 13 == 0)
                 {
-                    str += "Fezz";
+                    str = "Fezz";
+                    names.Add(str);
                 }
                  
                 if (i % 5 == 0)
                 { 
-                    str += "Buzz";
+                    str = "Buzz";
+                    names.Add(str);
                 }
                 
                 if (i % 7 == 0)
                 {
-                     str += "Bang";
+                     str = "Bang";
+                     names.Add(str);
                 }
                 
                 if (i % 11 == 0 && i % 13 == 0)
                 {
-                    str += "Bong";
+                    str = "Bong";
+                    names.Add(str);
                 }
 
                 if (i % 11 == 0 && i % 13 != 0)
                 {
                     str = "";
                     str += "Bong";
+                    names.Clear();
+                    names.Add(str);
                 }
                  
                 if (str == "")
                 {
                      str += i.ToString();
+                     names.Add(str);
                 }
-                
-                
-                Console.WriteLine(str);
-                 
+
+                if (i % 17 == 0)
+                {
+                    names.Reverse();
+                    string reversedStr = string.Join("", names);
+                    Console.WriteLine(reversedStr);
+
+                }
+
+                else
+                {
+                    string originalStr = string.Join("", names);
+                    Console.WriteLine(originalStr);
+                }
 
             }
-            
+
         }
     }
 }
