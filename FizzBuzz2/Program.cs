@@ -8,73 +8,79 @@ namespace FizzBuzz2
         static void Main(string[] args)
         {
             
-            Console.WriteLine("Enter a number");
-            int loops = Convert.ToInt32(Console.ReadLine());
+           Console.WriteLine("Enter a number");
+           int loops = Convert.ToInt32(Console.ReadLine());
+           
+           Console.WriteLine("Implement Fizz? Y/N");
+           string fizz = Console.ReadLine();
+           
+           Console.WriteLine("Implement Buzz? Y/N");
+           string buzz = Console.ReadLine();
+           
+           Console.WriteLine("Implement Fezz? Y/N");
+           string fezz = Console.ReadLine(); 
+            
+            
+            // var fizzBuzzer = new FizzBuzzer();
+            //
+            // foreach (var value in fizzBuzzer)
+            // {
+            //     Console.WriteLine(value);
+            // }
             
             for (int i = 1; i <= loops; i++)
             {
                 String str = "";
                 List<string> names = new List<string>();
-
-                if (i % 3 == 0)
-                {
-                    str = "Fizz";
-                    names.Add(str);
-                }
+            
                 
-                if (i % 13 == 0)
-                {
-                    str = "Fezz";
-                    names.Add(str);
-                }
-                 
-                if (i % 5 == 0)
-                { 
-                    str = "Buzz";
-                    names.Add(str);
-                }
+                // TODO - Combine these two ifs, check if list is empty and remove strings
+                if ((fizz == "Y") && (i % 3 == 0))
+                    {
+                        names.Add("Fizz");
+                    }
+
+                if ((fezz == "Y") && (i % 13 == 0))
+                    {
+                        names.Add("Fezz");
+                    }
+
+
+                if ((buzz == "Y") && (i % 5 == 0))
+                    {
+                        names.Add("Buzz");
+                    } 
+                
                 
                 if (i % 7 == 0)
                 {
-                     str = "Bang";
-                     names.Add(str);
+                    names.Add("Bang");
                 }
                 
                 if (i % 11 == 0 && i % 13 == 0)
                 {
-                    str = "Bong";
-                    names.Add(str);
+                    names.Add("Bong");
                 }
-
+            
                 if (i % 11 == 0 && i % 13 != 0)
                 {
-                    str = "";
-                    str += "Bong";
                     names.Clear();
-                    names.Add(str);
+                    names.Add("Bong");
                 }
                  
-                if (str == "")
+                if (names.Count == 0)
                 {
                      str += i.ToString();
                      names.Add(str);
                 }
-
+            
                 if (i % 17 == 0)
                 {
                     names.Reverse();
-                    string reversedStr = string.Join("", names);
-                    Console.WriteLine(reversedStr);
-
                 }
-
-                else
-                {
-                    string originalStr = string.Join("", names);
-                    Console.WriteLine(originalStr);
-                
-                }
-
+            
+                string originalStr = string.Join("", names);
+                Console.WriteLine(originalStr);
             }
 
         }
