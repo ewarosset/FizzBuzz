@@ -9,27 +9,32 @@ namespace FizzBuzz2
 
             for (int i = 1; i < 101; i++)
             {
+                String str = "";
 
-                if (i % 3 == 0 && i % 5 == 0)
-
+                if (i % 3 == 0)
                 {
-                    Console.WriteLine("FizzBuzz");
+                    str += "Fizz";
                 }
-
-                else if (i % 3 == 0)
-                {
-                    Console.WriteLine("Fizz");
+                 
+                if (i % 5 == 0)
+                { 
+                    str += "Buzz";
                 }
-
-                else if (i % 5 == 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else
-                {
-                    Console.WriteLine(i); 
-                }     
                 
+                if (i % 7 == 0)
+                {
+                     str += "Bang";
+                }
+                 
+                if (str == "")
+                {
+                     str += i.ToString();
+                }
+                 // str = fizzbuzz
+
+                 Console.WriteLine(str);
+                 
+
             }
             
         }
