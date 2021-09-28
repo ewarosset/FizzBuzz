@@ -10,7 +10,7 @@ namespace FizzBuzz2
             for (int i = 1; i < 101; i++)
             {
                 String str = "";
-
+                
                 if (i % 3 == 0)
                 {
                     str += "Fizz";
@@ -25,14 +25,20 @@ namespace FizzBuzz2
                 {
                      str += "Bang";
                 }
+                
+                if (i % 11 == 0)
+                {
+                    str = "";
+                    str += "Bong";
+                }
                  
                 if (str == "")
                 {
                      str += i.ToString();
                 }
-                 // str = fizzbuzz
-
-                 Console.WriteLine(str);
+                
+                
+                Console.WriteLine(str);
                  
 
             }
