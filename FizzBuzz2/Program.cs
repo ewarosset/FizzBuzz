@@ -7,8 +7,11 @@ namespace FizzBuzz2
     {
         static void Main(string[] args)
         {
-
-            for (int i = 1; i < 256; i++)
+            
+            Console.WriteLine("Enter a number");
+            int loops = Convert.ToInt32(Console.ReadLine());
+            
+            for (int i = 1; i <= loops; i++)
             {
                 String str = "";
                 List<string> names = new List<string>();
@@ -69,6 +72,7 @@ namespace FizzBuzz2
                 {
                     string originalStr = string.Join("", names);
                     Console.WriteLine(originalStr);
+                
                 }
 
             }
