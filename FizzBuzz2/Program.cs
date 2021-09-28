@@ -7,13 +7,18 @@ namespace FizzBuzz2
         static void Main(string[] args)
         {
 
-            for (int i = 1; i < 101; i++)
+            for (int i = 1; i < 201; i++)
             {
                 String str = "";
                 
                 if (i % 3 == 0)
                 {
                     str += "Fizz";
+                }
+                
+                if (i % 13 == 0)
+                {
+                    str += "Fezz";
                 }
                  
                 if (i % 5 == 0)
@@ -26,7 +31,12 @@ namespace FizzBuzz2
                      str += "Bang";
                 }
                 
-                if (i % 11 == 0)
+                if (i % 11 == 0 && i % 13 == 0)
+                {
+                    str += "Bong";
+                }
+
+                if (i % 11 == 0 && i % 13 != 0)
                 {
                     str = "";
                     str += "Bong";
